@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Игра в крестики-нолики</title>
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<meta property="og:image" content="path/to/image.jpg">
+		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#000">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#000">
+		<!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+		<link rel="stylesheet" href="css/header.min.css">
+
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="contentWrap">
+				<header class="header commonStyle">
+					<h1>Поиграем в крестики-нолики?</h1>
+				</header>
+				<div class="content commonStyle">
+					<div class="wrapContainers">
+						<div id="wrapInputs">
+							<p>Чем будете ходить?</p>
+							<div>
+								<label for="choiceX">x</label>
+								<input type="radio" name="choice" value="x" id="choiceX" checked>
+								<span></span>
+							</div>
+							<div>
+								<label for="choiceO">o</label>
+								<input type="radio" name="choice" value="o" id="choiceO">
+								<span></span>
+							</div>
+						</div>
+						<div class="btnWrap">
+							<button id="btnPlay">Начать игру</button>
+							<button id="btnAnew">Играть заново</button>
+						</div>
+						<div class="messageWrap">Сначала нажмите на кнопку ..</div>
+					</div>
+					<span id="text"></span>
+					<div class="flexContainer">
+						<div class="customWrap"></div>
+						<div id="game" data-start="no" data-turn="">
+							<div class="block1"></div>
+							<div class="block2"></div>
+							<div class="block3"></div>
+
+							<div class="block4"></div>
+							<div class="block5"></div>
+							<div class="block6"></div>
+
+							<div class="block7"></div>
+							<div class="block8"></div>	
+							<div class="block9"></div>
+						</div>
+						<div class="jsWrap"></div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer commonStyle"></footer>
+		</div>
+
+		<link rel="stylesheet" href="css/main.min.css">
+
+		<script src="js/scripts.min.js"></script>
+	</body>
+</html>

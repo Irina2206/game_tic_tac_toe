@@ -1,0 +1,35 @@
+{
+  "name": "game_tic_tac_toe",
+  "version": "2.0.1",
+  "description": "This is the game Tic Tac Toe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-clean-css": "^3.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.0",
+    "gulp-util": "^3.0.8",
+    "vinyl-ftp": "^0.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Irina2206/game_tic_tac_toe.git"
+  },
+  "author": "Irina2206",
+  "bugs": {
+    "url": "https://github.com/Irina2206/game_tic_tac_toe/issues"
+  },
+  "homepage": "https://github.com/Irina2206/game_tic_tac_toe#readme"
+}

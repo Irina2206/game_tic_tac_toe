@@ -1,0 +1,440 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*::-webkit-input-placeholder
+	color: $colorPlaceholder
+	opacity: 1
+
+*:-moz-placeholder
+	color: $colorPlaceholder
+	opacity: 1
+
+*::-moz-placeholder
+	color: $colorPlaceholder
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: $colorPlaceholder
+	opacity: 1
+
+body,
+body *
+	box-sizing: border-box
+	margin: 0
+	padding: 0 
+
+html, 
+body
+	width: 100%
+	height: 100%
+
+body
+	background: $bgBody
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+	opacity: 1
+
+	font: 16px/1.2 $OpenSansRegular, sans-serif
+
+div:focus,
+ul:focus,
+li:focus,
+a:focus,
+input:focus,
+button:focus,
+select:focus,
+option:focus,
+textarea:focus
+	outline: $colorPlaceholder
+
+.visuallyHidden // class for availability
+	visibility: hidden
+	clip: rect(0 0 0 0)
+	width: 1px
+	height: 1px
+	margin: -1px
+
+/* There use display: table | display: table-row. It is used so that the footer always sticks to the bottom of the page*/
+
+.wrapper
+	max-width: 1440px
+	display: table 
+	width: 100%
+	height: 100%
+
+	margin: 0 auto
+
+.commonStyle
+	position: relative
+	max-width: 970px
+
+	padding: 0 10px
+	margin: 0 auto
+
+.contentWrap 
+	display: table-row 
+	height: 100%
+
+/* HEADER */
+
+.header 
+	padding-top: 20px
+	h1
+		position: relative
+		margin-bottom: 30px 
+
+		color: $text
+		font: 35px $OpenSansSemiBold
+		text-align: center
+
+		&::after 
+			content: ''
+			background: $text
+			position: absolute
+			bottom: -10px
+			left: 50%
+			right: 50%
+			height: 3px
+			animation: lineBottom 1s ease-out .8s forwards
+
+@keyframes lineBottom 
+	0%
+		left: 50%
+		right: 50%
+
+	50% 
+		left: 40%
+		right: 40%
+
+	100% 
+		left: 45%
+		right: 45%
+
+.content 
+	overflow: hidden
+	padding-bottom: 50px
+	margin-bottom: 30px
+
+	color: $text
+	font-size: 18px
+
+.wrapContainers 
+	background: $bgBody
+	border: 5px solid $bgBody
+	border-radius: 12px
+	box-shadow: inset 0 0 0 2px #ccc
+	outline: 3px solid #ccc
+
+	position: relative
+	display: flex
+	flex-flow: row nowrap
+	width: 80%
+	margin: 15px auto 20px
+	padding: 20px 30px
+
+
+#wrapInputs 
+	position: relative
+	flex: 1
+	cursor: default
+
+	p 
+		margin: 0 0 10px
+
+	& > div 
+		display: inline-block
+		padding: 10px 10px 10px 0
+
+	input 
+		opacity: 0
+		cursor: pointer
+		
+	label 
+		display: inline-block
+		width: 15px
+		margin-right: 5px
+		cursor: pointer
+		text-transform: uppercase
+	
+	span
+		background: $borderBlocks
+		border-radius: 10px
+		display: inline-block
+		
+		width: 10px
+		height: 10px
+		margin-left: -15px
+		cursor: pointer
+
+	input:checked + span 
+		box-shadow: 0 0 0px 3px $bgBody, 0 0 5px 3px $borderBlocks
+		transition: all .3s
+	
+.btnWrap 
+	flex: 1
+	display: flex
+	flex-flow: row nowrap
+	justify-content: flex-end
+	
+	button 
+		background: $btnBg
+		border: 1px solid $btnBorder
+		border-radius: 5px
+		box-shadow: 0 0 0 2px $bgBody,0 0 3px 3px $btnShadow
+		display: block
+		padding: 7px 10px
+		margin: 10px 0
+		
+		color: $colorTextBtn
+		font-size: 17px
+		font-weight: bold
+		transition: all .3s
+
+		&:hover
+			background: $btnHoverBg
+			box-shadow: 0 0 0 2px $bgBody,0 0 4px 5px $btnHoverShadow
+			cursor: pointer
+
+	#btnAnew 
+		display: none
+
+.messageWrap 
+	position: absolute
+	opacity: 0
+
+.messageBlock,
+.messageBlockBack
+	background: $bgBody
+	border: 2px solid $blockShadow2
+	border-radius: 0 0 7px 7px
+	bottom: 0px
+	right: 29%
+	z-index: -1
+	opacity: 1
+	padding: 4px 10px
+
+	&::before
+		content: ''
+		background: url(../img/arrow_right.png) no-repeat center center
+		position: absolute
+		top: -56px
+		right: -30px
+		width: 64px
+		height: 64px
+		transform: rotateZ(-16deg)
+
+.messageBlock
+	animation: showMessage 1s forwards
+
+	&::before 
+		opacity: 0
+		animation: arrowShow 1.5s 1s forwards
+
+.messageBlockBack
+	animation: showMessageBack 1s forwards
+
+	&::before 
+		opacity: 1	
+		animation: arrowShowBack .5s forwards
+
+
+@keyframes arrowShow 
+	0% 
+		opacity: 0
+
+	100% 
+		opacity: 1
+
+@keyframes arrowShowBack
+	0% 
+		opacity: 1
+
+	100% 
+		opacity: 0
+
+
+@keyframes showMessage 
+	0% 
+		bottom: 0
+		z-index: -1
+
+	50% 
+		z-index: -1
+		bottom: -50px
+
+	100% 
+		z-index: 2
+		bottom: -31px
+
+@keyframes showMessageBack
+	0% 
+		bottom: -31px
+		z-index: 2
+
+	50% 
+		z-index: -1
+		bottom: -50px
+
+	100% 
+		z-index: -1
+		bottom: 0
+
+
+.flexContainer 
+	display: flex
+	flex-flow: row nowrap
+	justify-items: center
+	align-items: center
+
+.customWrap,
+.jsWrap
+	flex: 0 0 200px
+	display: flex
+	justify-content: center
+	height: 128px
+	position: relative
+
+.winShadowJump 
+
+	&::after 
+		content: ''
+		background: $textShadow
+		border-radius: 50%
+		position: absolute
+		bottom: -19px
+		width: 5px
+		height: 5px
+		transform: rotateX(66deg)
+		animation: shadowJump 5s infinite alternate
+
+@keyframes shadowJump 
+
+	0%
+		box-shadow: 0 0 38px 22px $shadowVar
+	10%
+		box-shadow: 0 0 34px 17px $shadowVar
+	20%
+		box-shadow: 0 0 38px 22px $shadowVar
+	30% 
+		box-shadow: 0 0 34px 17px $shadowVar
+	40% 
+		box-shadow: 0 0 38px 22px $shadowVar
+	50% 
+		box-shadow: 0 0 34px 17px $shadowVar
+	60% 
+		box-shadow: 0 0 38px 22px $shadowVar
+	70% 
+		box-shadow: 0 0 34px 17px $shadowVar
+	80% 
+		box-shadow: 0 0 38px 22px $shadowVar
+	90% 
+		box-shadow: 0 0 34px 17px $shadowVar
+	100% 
+		box-shadow: 0 0 38px 22px $shadowVar
+
+#game 
+	border-radius: 15px
+	flex: 0 0 390px
+	width: 390px
+	height: 390px
+	margin: 20px auto 10px
+	
+	& > div
+		background: $bgBlocks
+		border: 1px solid $borderBlocks
+		border-radius: 15px
+		box-shadow: 5px 7px 0px 1px $blockShadow1, 15px 16px 40px 2px $blockShadow2
+		float: left
+		width: 130px
+		height: 130px
+
+		color: $textBlocks
+		font-size: 100px
+		text-align: center
+		text-transform: uppercase
+		text-shadow: 1px 1px 2px transparent, 6px 6px 1px $textShadow
+		cursor: pointer
+
+#text
+	display: block
+	width: 90%
+	height: 35px
+	margin: 0 auto
+	transition: all .5s
+
+	color: $purple
+	font-size: 22px
+	font-weight: bold
+	text-align: left
+
+.textWinner 
+	font-size: 25px
+	animation: changeColor 14s alternate infinite
+
+@keyframes changeColor 
+	0% 
+		color: $purple
+	25% 
+		color: $btnHoverBg
+	50% 
+		color: $blockShadow2	
+	100% 
+		color: $btnHoverShadow
+
+.hideBlock 
+	opacity: .5
+
+	&::before 
+		content: ''
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background: transparent
+		z-index: 10
+
+.scaleShowImg
+	position: relative
+	animation: scaleShow 1s
+
+.jump 
+	position: relative
+	animation: jumpAnim 5s infinite alternate
+
+@keyframes scaleShow 
+	0%
+		transform: scale(0)
+		opacity: 0
+	100%
+		transform: scale(1)
+		opacity: 1
+
+@keyframes jumpAnim 
+	0%
+		transform: translateY(0px)
+	10%
+		transform: translateY(-15px)
+	20%
+		transform: translateY(0px)
+	30% 
+		transform: rotateZ(10deg) translateY(-15px)
+	40% 
+		transform: scale(1) rotateZ(0deg) translateY(0px)
+	50% 
+		transform: scale(1.1) rotateZ(-10deg) translateY(-15px)
+	60% 
+		transform: scale(1) rotateZ(0deg) translateY(0px)
+	70% 
+		transform: scale(1.1) rotateZ(10deg) translateY(-15px)
+	80% 
+		transform: scale(1) rotateZ(0deg) translateY(0px)
+	90% 
+		transform: scale(1.1) rotateZ(-10deg) translateY(-15px)
+	100% 
+		transform: scale(1) rotateZ(0deg) translateY(0px)
+
+
+
