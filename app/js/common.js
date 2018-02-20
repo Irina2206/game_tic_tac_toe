@@ -34,7 +34,8 @@ window.onload = function() {
 		if(messageWrap.classList.contains('messageBlock')) {
 			messageWrap.classList.add('messageBlockBack');
 			var timerRemoveClasses = setTimeout(function() {
-				messageWrap.classList.remove('messageBlock','messageBlockBack');
+				messageWrap.classList.remove('messageBlock');
+				messageWrap.classList.remove('messageBlockBack');
 			}, 1500);
 		}
 
@@ -62,6 +63,7 @@ window.onload = function() {
 		actions(e.target,'no',btnPlay);
 		wrapInputs.classList.remove('hideBlock');
 		text.innerHTML = '';
+		text.classList.remove('textWinner');
 		numberOfTimes = 0;
 		choiceX.checked = true;
 		choiceO.checked = false;
@@ -111,7 +113,6 @@ window.onload = function() {
 		if(gameBlock.dataset.start == 'no') {
 			gameBlock.onclick = function(e) {
 				messageWrap.classList.add('messageBlock');
-				console.log('нельзя');
 				return false; // запрещаю клик по блокам
 			}
 		} else {
@@ -129,7 +130,7 @@ window.onload = function() {
 
 /* Дествия пользователя*/
 	function customAct(elem) {
-		if(elem.dataset.check !== 'check' && gameBlock.dataset.start !== 'no') {
+		if(elem.classList.contains('block') && elem.dataset.check !== 'check' && gameBlock.dataset.start !== 'no') {
 			elem.innerHTML = customVar;
 			elem.setAttribute('data-check','check');
 			// Проверяю есть ли победитель

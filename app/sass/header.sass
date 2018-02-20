@@ -124,8 +124,7 @@ textarea:focus
 	background: $bgBody
 	border: 5px solid $bgBody
 	border-radius: 12px
-	box-shadow: inset 0 0 0 2px #ccc
-	outline: 3px solid #ccc
+	box-shadow: inset 0 0 0 2px $blockShadow2, 0 0 0 2px $borderCol, 0 0 9px 4px $textShadow
 
 	position: relative
 	display: flex
@@ -145,6 +144,7 @@ textarea:focus
 
 	& > div 
 		display: inline-block
+		width: 55px
 		padding: 10px 10px 10px 0
 
 	input 
@@ -169,7 +169,7 @@ textarea:focus
 		cursor: pointer
 
 	input:checked + span 
-		box-shadow: 0 0 0px 3px $bgBody, 0 0 5px 3px $borderBlocks
+		box-shadow: 0 0 1px 3px $bgBody, 0 0 4px 3px $borderBlocks
 		transition: all .3s
 	
 .btnWrap 
@@ -184,7 +184,8 @@ textarea:focus
 		border-radius: 5px
 		box-shadow: 0 0 0 2px $bgBody,0 0 3px 3px $btnShadow
 		display: block
-		padding: 7px 10px
+		height: 45px
+		padding: 3px 20px
 		margin: 10px 0
 		
 		color: $colorTextBtn
@@ -230,7 +231,7 @@ textarea:focus
 
 	&::before 
 		opacity: 0
-		animation: arrowShow 1.5s 1s forwards
+		animation: arrowShow 1s 1s forwards
 
 .messageBlockBack
 	animation: showMessageBack 1s forwards
@@ -266,11 +267,11 @@ textarea:focus
 
 	100% 
 		z-index: 2
-		bottom: -31px
+		bottom: -32px
 
 @keyframes showMessageBack
 	0% 
-		bottom: -31px
+		bottom: -32px
 		z-index: 2
 
 	50% 
@@ -304,8 +305,9 @@ textarea:focus
 		border-radius: 50%
 		position: absolute
 		bottom: -19px
-		width: 5px
-		height: 5px
+		left: calc(50% - 2px)
+		width: 4px
+		height: 4px
 		transform: rotateX(66deg)
 		animation: shadowJump 5s infinite alternate
 
@@ -345,7 +347,7 @@ textarea:focus
 		background: $bgBlocks
 		border: 1px solid $borderBlocks
 		border-radius: 15px
-		box-shadow: 5px 7px 0px 1px $blockShadow1, 15px 16px 40px 2px $blockShadow2
+		box-shadow: 5px 7px 0px 1px $blockShadow1, 15px 16px 27px 2px $blockShadow2
 		float: left
 		width: 130px
 		height: 130px
